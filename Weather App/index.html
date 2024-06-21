@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="icon" href="./Images/Weather-Icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Weather App</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="Weather-container">
+            <!--Grant location container-->
+            <div class="grant-container subContainer">
+                <img src="./Images/Location-gif.webp" alt="" width="120" height="120" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access To Grant Weather Information</p>
+                <button class="btn" data-grantAcess type="submit">Grant Access</button>
+            </div>
+            <!--Search form container-->
+            <form class="form-container" data-searchform>
+                <input placeholder="Search for city ...." data-searchInput type="text" list="city">
+                <datalist id="city">
+                    <option value="Indore">Indore</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Gwalior">Gwalior</option>
+                    <option value="Morena">Morena</option>
+                    <option value="Adoni">Adoni</option>
+                    <option value="Kadapa">Kadapa</option>
+                    <option value="Dispur">Dispur</option>
+                    <option value="Dibrugarh">Dibrugarh</option>
+                    <option value="Chapra">Chapra</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Bilaspur">Bilaspur</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Biharia">Biharia</option>
+                    <option value="New Delhi">New Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Lucknow">Lucknow</option>
+                    <option value="Kanpur">Kanpur</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Thane">Thane</option>
+                    <option value="Patna">Patna</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Meerut">Meerut</option>
+                    <option value="Amritsar">Amritsar</option>
+                    <option value="Ranchi">Ranchi</option>
+                    <option value="Jodhpur">Jodhpur</option>
+                    <option value="Aurangabad">Aurangabad</option>
+                    <option value="Varanasi">Varanasi</option>
+                    <option value="Jabalpur">Jabalpur</option>
+                    <option value="Kota" Kota></option>
+                    <option value="Mysore">Mysore</option>
+                    <option value="Aligarh">Aligarh</option>
+                    <option value="Bhubaneswar">Bhubaneswar</option>
+                    <option value="Bhiwandi">Bhiwandi</option>
+                    <option value="Kochi">Kochi</option>
+                    <option value="Kolhapur">Kolhapur</option>
+                    <option value="Ajmer">Ajmer</option>
+                    <option value="Jhansi">Jhansi</option>
+                    <option value="Belgaum"> Belgaum</option>
+                    <option value="Udaipur">Udaipur</option>
+                </datalist>
+                <button class="btn" type="submit">
+                    <img src="./Images/Search-icon.png" alt="" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!--loadind Container-->
+            <div class="loading-container subContainer">
+                <img src="./Images/Loading-gif.gif" alt="" width="100" height="100" loading="lazy">
+                <p>Loading</p>
+            </div>
+
+            <!-- show weather informaton container-->
+            <div class="info-container subContainer">
+                <!--city name and flag-->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+                <!--weather description-->
+                <p data-weatherDesc></p>
+                <!--weather icon-->
+                <img data-weatherIcon>
+                <!--weather temperature-->
+                <p data-temperature></p>
+
+                <!--3 cards parameters-->
+                <div class="parameter-Container">
+                    <!--Card 1-->
+                    <div class="parameter">
+                        <img src="./Images/wind.png" alt="">
+                        <p>wind</p>
+                        <p class="parameterValue" data-windspeed></p>
+                    </div>
+                    <!--Card 2-->
+                    <div class="parameter">
+                        <img src="./Images/humidity.png" alt="">
+                        <p>humidity</p>
+                        <p class="parameterValue" data-humidity></p>
+                    </div>
+                    <!--Card 3-->
+                    <div class="parameter">
+                        <img src="./Images/cloud.png" alt="">
+                        <p>cloud</p>
+                        <p class="parameterValue" data-cloud></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Location Not Found -->
+            <div class="errorContainer subContainer">
+                <img src="./Images/not-found.png" data-errorImg />
+                <p data-errorText></p>
+                <button class="btn" data-errorButton>Retry Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
